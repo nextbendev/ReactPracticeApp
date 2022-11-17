@@ -1,12 +1,57 @@
-* {
-  box-sizing: border-box;
+
+.top {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: red;
+}
+.header {
+  background-color: green;
 }
 
-html {
-  font-family: sans-serif;
-  background: darkgrey;
+.body {
+  display: flex;
+  flex: 1;
+  background-color: yellow;
+}
+.content {
+  flex: 1;
 }
 
-body {
-  margin: 0;
+.nav, .ads {
+  /* 12em is the width of the columns */
+  flex: 0 0 12em;
+}
+
+.nav {
+  background-color: blue;
+  /* put the nav on the left */
+  order: -1;
+}
+
+.HolyGrail,
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  order: -1;
+}
+.ads{
+  background-color: pink;
+}
+
+@media (min-width: 768px) {
+  .body {
+    flex-direction: row;
+    flex: 1;
+  }
+  .content {
+    flex: 1;
+  }
+  .nav, .ads {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em;
+  }
 }

@@ -1,0 +1,17 @@
+import React from "react";
+import styles from "./Nfts.module.css"
+
+const Nfts = (props) => {
+    return(
+        <Ol
+            className={styles.button} 
+            type={props.type || 'button'} 
+            onClick={props.onClick} 
+        >
+            {props.children}
+        </Ol>
+      );
+
+};
+
+export default Nfts;

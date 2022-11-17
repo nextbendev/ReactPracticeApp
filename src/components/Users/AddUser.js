@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Card from "../UI/Card";
 import styles from "./AddUser.module.css"
 import Button from "../UI/Button";
+// import ErrorModal from "../UI/ErrorModal";
 
 const AddUser = (props) => {
     const [enteredUsername, setEnteredUsername] = useState('');
@@ -30,6 +31,7 @@ const AddUser = (props) => {
     };
 
     return (
+        <div>
         <Card className={styles.input}>
             <form onSubmit={addUserHandler}>
                 <label htmlFor="username">UserName</label>
@@ -50,6 +52,7 @@ const AddUser = (props) => {
             </form>
             
         </Card>
+    </div>
     );
 };
 
