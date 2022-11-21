@@ -1,45 +1,47 @@
 import React, {useEffect} from "react";
 import styles from './AccountInfo.module.css'
 let Web3 = require('web3');
+
 let url = window.ethereum;
 let web3 = new Web3(url);
-let account =web3.eth.accounts
+
 
 const AccountInfo = (props) => {
-  console.log('not working', account)
-  console.log(props, 'props')
+  console.log('props', props);
+  const renderLotto = (lottoEntries) => {
+    return props.lottoEntries.map(entry => <li>{entry}</li>)
+  }
+  
+  
+  
     return(
         <div class="col-sm-4">
-            <h2>Wallet Info</h2>
+          <button class="nav-link active" onClick={props.balanceGroup}>Refesh Wallet</button>
+          {props.user === undefined && <h2>Not logged in</h2>}
+          {props.user !== undefined && <h2>Wallet:0x...{props.user.substring(36, 42)} </h2>}
+
+            <p ></p>
                 <div className={styles.container}> 
                   <div>
                     <img src={`https://cryptobroskis.com/cryptobroskis/avaxImg/${props.nftId}.png`} className={styles.nft}></img>
                     </div>
                     <div>
-                      <p className={styles.info}>Account</p>
-                      <ul>
-                        <li> WAVAX:{props.wavax}</li>
+                      
+                      <ul className={styles.list}>
+                        <li> AVAX:{props.avax.toFixed(3)}</li>
+                        <li> WAVAX:{props.wavax.toFixed(3)}</li>
+                        <li>CB NFT's Owned: {props.nftCount}</li>
                         
                      </ul>
                     </div>  
                   
                 </div>
-            <p>Thank you for being a member</p>
-            <h3 class="mt-4">Some Links</h3>
-            <p>Lorem ipsum dolor sit ame.</p>
-            <ul class="nav nav-pills flex-column">
-              <li class="nav-item">
-                <button class="nav-link active" onClick={props.getNfts}>Refresh</button>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onClick={props.getBal}>Balance</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-              </li>
+                {props.nftCount > 0 && <p>Thank you for owning a Crypto Broski Nft</p>}
+           
+            
+            <h3 class="mt-4">Game Entrants</h3>
+            <ul>
+              {props.lottoEntries !== 0 && <li>{renderLotto(props.lottoEntries)}</li>}
             </ul>
             <hr class="d-sm-none"></hr>
           </div>

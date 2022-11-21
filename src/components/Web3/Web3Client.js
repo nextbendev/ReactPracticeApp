@@ -3,14 +3,14 @@ let url = window.ethereum;
 const web3 = new Web3(url);
 let selectedAccount;
 let cb_contract;
-
-
 let isInitialized = false;
+let lottoContract;
+
 
 
 export const init = async () => {
-    let url = window.ethereum;
-    // const web3 = new Web3(url);
+ 
+    const web3 = new Web3(url);
     
    
     if(typeof url !== 'undefined') {
@@ -26,16 +26,15 @@ export const init = async () => {
         selectedAccount = accounts[0];
         getNftBalance(selectedAccount);
         getAvax(selectedAccount);
-        console.log(`Selected account changed to ${selectedAccount}`);
-        console.log(`Wavax ${getAvax}`);
+        console.log(`Selected account changed to ${getAvax()}`);
+    
         
       });
     }
-   
     isInitialized = true;
 };
    
-export const getNftBalance = async () => {
+export const getNftBalance = async (props) => {
     if (!isInitialized) {
         await init();
     }
@@ -759,11 +758,12 @@ export const getNftBalance = async () => {
       }
    ];
     const cb_add = '0xEB4F5d458B135A8993239f91ab3f45Ab92CD519e'
-    const cb_wallet = '0xf886612f5A7bDd7eC6ECbe4f224Fb2D05D2C709c'
+    
     const cb_contract = new web3.eth.Contract(cb_abi, cb_add);
     return cb_contract.methods.walletOfOwner(selectedAccount).call();
 };
-export const getAvax = async () => {
+
+export const getWavax = async () => {
    if (!isInitialized) {
       await init();
   }
@@ -1095,5 +1095,270 @@ export const getAvax = async () => {
   return avaxContract.methods.balanceOf(selectedAccount).call();
 };
 
+export const getEntries = async () => {
+   if (!isInitialized) {
+      await init();
+  }
+  const lottoAdd ='0x44De21e9Ad936418dFb628d80101b1F681AAA049';
+  const lottoAbi = [
+   {
+      "inputs":[
+         
+      ],
+      "stateMutability":"nonpayable",
+      "type":"constructor"
+   },
+   {
+      "inputs":[
+         
+      ],
+      "name":"cbPool",
+      "outputs":[
+         {
+            "internalType":"address",
+            "name":"",
+            "type":"address"
+         }
+      ],
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         
+      ],
+      "name":"enter",
+      "outputs":[
+         
+      ],
+      "stateMutability":"payable",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         
+      ],
+      "name":"entryCost",
+      "outputs":[
+         {
+            "internalType":"uint256",
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         
+      ],
+      "name":"getBalance",
+      "outputs":[
+         {
+            "internalType":"uint256",
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         
+      ],
+      "name":"getPlayers",
+      "outputs":[
+         {
+            "internalType":"address payable[]",
+            "name":"",
+            "type":"address[]"
+         }
+      ],
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         {
+            "internalType":"uint256",
+            "name":"lottery",
+            "type":"uint256"
+         }
+      ],
+      "name":"getWinnerByLottery",
+      "outputs":[
+         {
+            "internalType":"address payable",
+            "name":"",
+            "type":"address"
+         }
+      ],
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         {
+            "internalType":"uint256",
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "name":"lotteryHistory",
+      "outputs":[
+         {
+            "internalType":"address payable",
+            "name":"",
+            "type":"address"
+         }
+      ],
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         
+      ],
+      "name":"lotteryId",
+      "outputs":[
+         {
+            "internalType":"uint256",
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         
+      ],
+      "name":"pickWinner",
+      "outputs":[
+         
+      ],
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         
+      ],
+      "name":"playerCount",
+      "outputs":[
+         {
+            "internalType":"uint256",
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         {
+            "internalType":"uint256",
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "name":"players",
+      "outputs":[
+         {
+            "internalType":"address payable",
+            "name":"",
+            "type":"address"
+         }
+      ],
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         
+      ],
+      "name":"resetGame",
+      "outputs":[
+         
+      ],
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         {
+            "internalType":"address",
+            "name":"_cbPool",
+            "type":"address"
+         }
+      ],
+      "name":"setCbPool",
+      "outputs":[
+         
+      ],
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         {
+            "internalType":"uint256",
+            "name":"_entryCost",
+            "type":"uint256"
+         }
+      ],
+      "name":"setEntryCost",
+      "outputs":[
+         
+      ],
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         {
+            "internalType":"uint256",
+            "name":"_playerCount",
+            "type":"uint256"
+         }
+      ],
+      "name":"setPlayerCount",
+      "outputs":[
+         
+      ],
+      "stateMutability":"nonpayable",
+      "type":"function"
+   },
+   {
+      "stateMutability":"payable",
+      "type":"receive"
+   }
+];
+   const lottoContract = new web3.eth.Contract(lottoAbi, lottoAdd);
+   console.log("bal lotto")
+  return lottoContract.methods.getPlayers().call();
+};
+
+
+export const getAvax = async () => {
+   if (!isInitialized) {
+      await init();
+  }
+  return web3.eth.getBalance(selectedAccount);
+
+}
+
+
+export const getAccount = async () => {
+   if (!isInitialized) {
+      await init();
+  }
+  return selectedAccount;
+
+}
 
 
