@@ -9,7 +9,7 @@ let web3 = new Web3(url);
 const AccountInfo = (props) => {
   console.log('props', props);
   const renderLotto = (lottoEntries) => {
-    return props.lottoEntries.map(entry => <li>{entry}</li>)
+    return props.lottoEntries.map(entry => <li>0x...{entry.substring(36, 42)}</li>)
   }
   
   

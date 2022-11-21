@@ -7,8 +7,9 @@
 
 .fakeimg {
   height: 200px;
+  
   background: #aaa;
-  background-image: url('https://investorplace.com/wp-content/uploads/2022/02/avax-usd-1600-300x169.png');
+  background-image: url('lottoHeader.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

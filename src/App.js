@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import NftCard from './components/UI/NftCard'
-import {init, getNftBalance, getAvax, getWavax, getAccount, getEntries} from './components/Web3/Web3Client'
+import {init,  getAvax, getWavax, getAccount, getNftBalance} from './components/Web3/Web3Client';
 import Navbar from './components/UI/Navbar';
 import Button from './components/UI/Button';
 import AccountInfo from './components/UI/AcountInfo';
-import logo from './logo.png'
+import logo from './logo.png';
+import Game from './components/UI/Game';
+import {Cost, getEntries, getEntered, getId, getBal} from './components/Web3/Lotto';
+import {maxSupply} from './components/Web3/CbNft'
 
 
 
@@ -15,6 +18,11 @@ function App() {
   const [usersList, setUsersList] = useState([]);
   const [nftBalance, setNftBalance] = useState([]);
   const [lottoEntries, setLottoEntries] = useState(0);
+  const [lottoCost, setLottoCost] = useState(0);
+  const [lottoSize, setLottoSize] = useState(0);
+  const [lottoId, setLottoId] = useState(0);
+  const [lottoBal, setLottoBal] = useState(0);
+
   const [nftData, setNftData] = useState({
     NFT_NAME:"CryptoBroskis",
     NFT_ID:"1",
@@ -31,7 +39,13 @@ function App() {
     });
   };
 
-
+  const fetchLottoCost = () => {
+    Cost().then(lottoCost => {
+      setLottoCost(lottoCost);
+    }).catch(err => {
+      console.log(err);
+    })
+  };
   const fetchBalance = () => {
     getAvax().then(balance => {
       setBalance(balance);
@@ -63,7 +77,27 @@ function App() {
   const fetchNfts = () => {
     getNftBalance().then(nftBalance => {
       setNftBalance(nftBalance);
-      console.log('not working', nftBalance)
+    }).catch(err => {
+      console.log(err);
+    })
+  };
+  const fetchSize = () => {
+    getEntered().then(lottoSize => {
+      setLottoSize(lottoSize);
+    }).catch(err => {
+      console.log(err);
+    })
+  };
+  const fetchId = () => {
+    getId().then(lottoId => {
+      setLottoId(lottoId);
+    }).catch(err => {
+      console.log(err);
+    })
+  };
+  const fetchBal = () => {
+    getBal().then(lottoBal => {
+      setLottoBal(lottoBal);
     }).catch(err => {
       console.log(err);
     })
@@ -77,7 +111,10 @@ function App() {
     fetchNfts();
     getUser();
     lottoUsers();
-    console.log('entries', lottoEntries)
+    fetchLottoCost();
+    fetchSize();
+    fetchId();
+    fetchBal();
   }
   
 
@@ -88,56 +125,46 @@ function App() {
       tokenAbi: '',
     },
   ]
-
- 
-
   let picId = nftBalance[0];
-  
- 
-  console.log("entries",lottoEntries)
+  console.log("entries",lottoBal)
   
   useEffect(() => {
      init();
-     
   });
- 
- 
 
   return (
     <body>
       <div class="p-5 bg-primary text-white text-center header">
         <img src={logo}  height={200}></img>
-       
       </div>
-
       <div class="container mt-5">
         <div class="row">
         <AccountInfo 
           nftCount={nftBalance.length}
           nftId={picId} 
           balanceGroup={balanceGroup}
-          wavax={wavaxBalance *.000000000000000001}
+          wavax={wavaxBalance * .000000000000000001}
           avax={balance * .000000000000000001}
           user={userAccount}
           lottoEntries={lottoEntries}
          />
-          
-          <div class="col-sm-8">
-            <h2>Play CryptoBroski Luck!</h2>
-            
-            <h5></h5>
-            <div class="fakeimg"></div>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-
-            
-          </div>
+        <div class="col-sm-8">
+        <Game
+          cost={lottoCost * .000000000000000001}
+          size={lottoSize}
+          entered={lottoEntries.length}
+          round={lottoId}
+          pot={lottoBal}
+        > </Game>
+        
         </div>
+       
+        </div>
+        
       </div>
+   
 
-      <div class="mt-5 p-4 bg-dark text-white text-center">
-        <p>Footer</p>
-      </div>
+ 
     </body>
 
   );
