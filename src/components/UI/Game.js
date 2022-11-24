@@ -1,9 +1,7 @@
 import React from "react";
-import styles from './Game.css'
+import styles from './Game.css';
 
 const Game = (props) => {
-   
-    console.log("fcost", props.cost)
     let playerLeft = props.size - props.entered;
     let futureEntry =( playerLeft * props.cost);
     let potInt = parseInt(props.pot) * .000000000000000001;

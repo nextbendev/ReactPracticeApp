@@ -5,69 +5,22 @@ import style from "./NftCard.module.css"
 
 
 export default function NftCard(props) {
-    
+  const nfts = props.nftId.map((nft) =>
+  <img src={`https://cryptobroskis.com/cryptobroskis/avaxImg/${nft}.png`} className={style.nft} alt="..."></img>
+  );
+  
+  console.log(props.nftId)
   return (
     <div className={style.container}>
         <div className={ style.main }>
             <div className={style.a}> 
-            nft image               
+            {props.nftId.length > 0 && <ul> {nfts}</ul>}
+                      
             </div>
 
-            <div className={style.b}>
-                <div className={style.c}>Info</div>
-                <div className={style.d}>Buttons</div>
-            </div>
-        </div>
-        <div className={ style.main }>
-            <div className={style.a}> 
-            nft image               
-            </div>
-
-            <div className={style.b}>
-                <div className={style.c}>Info</div>
-                <div className={style.d}>Buttons</div>
-            </div>
-        </div>
-        <div className={ style.main }>
-            <div className={style.a}> 
-            nft image               
-            </div>
-
-            <div className={style.b}>
-                <div className={style.c}>Info</div>
-                <div className={style.d}>Buttons</div>
-            </div>
-        </div>
-        <div className={ style.main }>
-            <div className={style.a}> 
-            nft image               
-            </div>
-
-            <div className={style.b}>
-                <div className={style.c}>Info</div>
-                <div className={style.d}>Buttons</div>
-            </div>
-        </div>
-        <div className={ style.main }>
-            <div className={style.a}>
-
-            </div>
-            <div className={style.b}>
-                <div className={style.c}>L2</div>
-                <div className={style.d}>L3</div>
-            </div>
             
         </div>
-        <div className={ style.main }>
-            <div className={style.a}>
-
-            </div>
-            <div className={style.b}>
-                <div className={style.c}>L2</div>
-                <div className={style.d}>L3</div>
-            </div>
-            
-        </div>
+        
    </div>
   );
 }

@@ -1,25 +1,18 @@
-import React, {useEffect} from "react";
+import React from "react";
 import styles from './AccountInfo.module.css'
-let Web3 = require('web3');
-
-let url = window.ethereum;
-let web3 = new Web3(url);
-
 
 const AccountInfo = (props) => {
   console.log('props', props);
   const renderLotto = (lottoEntries) => {
-    return props.lottoEntries.map(entry => <li>0x...{entry.substring(36, 42)}</li>)
+    return props.lottoEntries.map(entry => <li key={entry.toString()}>0x...{entry.substring(36, 42)}</li>)
   }
   
   
   
     return(
-        <div class="col-sm-4">
-          <button class="nav-link active" onClick={props.balanceGroup}>Refesh Wallet</button>
-          {props.user === undefined && <h2>Not logged in</h2>}
-          {props.user !== undefined && <h2>Wallet:0x...{props.user.substring(36, 42)} </h2>}
-
+        <div class="col-sm-4">  
+            {props.user === undefined && <h2>Not logged in</h2>}
+            {props.user !== undefined && <h2>Wallet:0x...{props.user.substring(36, 42)} </h2>}
             <p ></p>
                 <div className={styles.container}> 
                   <div>
@@ -36,7 +29,12 @@ const AccountInfo = (props) => {
                     </div>  
                   
                 </div>
-                {props.nftCount > 0 && <p>Thank you for owning a Crypto Broski Nft</p>}
+                <button class="nav-link active" onClick={props.balanceGroup}>Refesh Wallet</button>
+          <button class="nav-link active" onClick={props.dispNft}>Disp Nft</button>
+          <button class="nav-link active" onClick={props.hideNft}>Hde Nft</button>
+          <button class="nav-link active" onClick={props.dispLotto}>Disp Lotto</button>
+          <button class="nav-link active" onClick={props.hideLotto}>Hde Lotto</button>
+                
            
             
             <h3 class="mt-4">Game Entrants</h3>

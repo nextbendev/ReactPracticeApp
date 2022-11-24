@@ -10,21 +10,18 @@ let lottoContract;
 
 export const init = async () => {
     const web3 = new Web3(url);
-
     if(typeof url !== 'undefined') {
       url
         .request({method: 'eth_requestAccounts'})
         .then(accounts => {
             selectedAccount = accounts[0];
-        console.log(`Selected account is ${selectedAccount}`)
+        console.log(`web3 Selected account is ${selectedAccount}`)
       }).catch(err => {
         console.log(err);
       });
       window.ethereum.on('accountsChanged', function (accounts) {
-        selectedAccount = accounts[0];
-        getNftBalance(selectedAccount);
-        getAvax(selectedAccount);
-        console.log(`Selected account changed to ${selectedAccount}`);
+        selectedAccount = accounts[0];      
+        console.log(`web3 Selected account changed to ${selectedAccount}`);
       });
     }
     isInitialized = true;
@@ -32,6 +29,7 @@ export const init = async () => {
    
 export const getNftBalance = async (props) => {
     if (!isInitialized) {
+      console.log('too much init');
         await init();
     }
     const cb_abi = 
@@ -761,6 +759,7 @@ export const getNftBalance = async (props) => {
 
 export const getWavax = async () => {
    if (!isInitialized) {
+      console.log('too much init');
       await init();
   }
   const avaxAdd ='0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7';
