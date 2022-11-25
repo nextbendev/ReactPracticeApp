@@ -146,27 +146,36 @@ function App() {
       <div class="p-5 bg-primary text-white text-center header">
         <img src={logo}  height={200}></img>
       </div>
+      <Navbar
+        balanceGroup={balanceGroup}
+        dispNft={dispNft}
+        hideNft={hideNft}
+        dispLotto={dispLotto}
+        hideLotto={hideLotto}
+        nftDisp={nftDisp}
+        lottoDisp={lottoDisp}
+        nftBalance={nftBalance.length}
+
+      />
       <div class="container mt-5">
         <div class="row">
           <AccountInfo 
             nftCount={nftBalance.length}
             nftId={picId} 
-            balanceGroup={balanceGroup}
+            
             wavax={wavaxBalance * .000000000000000001}
             avax={balance * .000000000000000001}
             user={userAccount}
             lottoEntries={lottoEntries}
-            dispNft={dispNft}
-            hideNft={hideNft}
-            dispLotto={dispLotto}
-            hideLotto={hideLotto}
+            
+           
           />
         <div class="col-sm-8">
           {lottoDisp === true && 
           <Game
             cost={lottoCost * .000000000000000001}
             size={lottoSize}
-            entered={lottoEntries.length}
+            lottoEntries={lottoEntries}
             round={lottoId}
             pot={lottoBal}          
           > </Game>}

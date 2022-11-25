@@ -14,6 +14,9 @@
   background-size: cover;
   background-position: center;
 }
+.navbarSizeBs {
+  width: 4.5em;
+}
 
 .body {
   display: flex;
