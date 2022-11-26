@@ -7,7 +7,7 @@ import Footer from './components/UI/Footer';
 import AccountInfo from './components/UI/AcountInfo';
 import logo from './logo.png';
 import Game from './components/UI/Game';
-import {Cost, getEntries, getEntered, getId, getBal, enterLotto} from './components/Web3/Lotto';
+import {Cost, getEntries, getEntered, getId, getBal, pickWinner} from './components/Web3/Lotto';
 import {maxSupply} from './components/Web3/CbNft'
 
 

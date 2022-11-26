@@ -293,4 +293,17 @@ export const getEntries = async () => {
  };
 
 
- 
+ export const pickWinner= async () => {
+   let gasLimit = '76000';
+   return lottoContract.methods.enterPlayer().send({
+      gasLimit: gasLimit,
+      to: lottoAdd,
+      from: web3.account,
+   })
+   .once('error', (err) => {
+      console.log(err);
+   })
+   .then((receipt) => {
+      console.log(receipt)
+   });
+ };
