@@ -7,10 +7,7 @@ const Game = (props) => {
     let futureEntry = ( playerLeft * props.cost);
     let potInt = parseInt(props.pot) * .000000000000000001;
     let totalPot = (potInt + futureEntry);
-    console.log('props', props)
-    const renderLotto = (lottoEntries) => {
-        return props.lottoEntries.map(entry => <li key={entry.toString()}>0x...{entry.substring(36, 42)}</li>)
-      }
+    
     return(         
         <div>
             <h2>Play CryptoBroski Luck!</h2>
@@ -27,11 +24,13 @@ const Game = (props) => {
                     <p>3rd {totalPot * .1}</p>
                 </div>
             </div>
-            <button>Play</button><button>Call Winner</button>
+            <button onClick={props.enterLotto}>Play</button><button>Call Winner</button>
                    
             <h3 class="mt-4">Game Entrants</h3>
             <ul>
-              {props.lottoEntries.length !== 0 && <li>{renderLotto(props.lottoEntries)}</li>}
+                {props.lottoEntries > 0 && props.lottoEntries.map(entry => <li key={entry.toString()}>0x...{entry.substring(36, 42)}</li>)}
+      
+              
             </ul>
         </div>
     )

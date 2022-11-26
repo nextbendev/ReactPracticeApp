@@ -1,5 +1,7 @@
 import React from "react";
 import styles from './AccountInfo.module.css'
+import whale from '../../Whale.png'
+import { style } from "@mui/system";
 
 const AccountInfo = (props) => {
   console.log('props', props);
@@ -23,20 +25,10 @@ const AccountInfo = (props) => {
                         <li> WAVAX:{props.wavax.toFixed(3)}</li>
                         <li> CBSKI: 0</li>
                         <li>CB's Owned: {props.nftCount}</li>
-                        
                      </ul>
                     </div>  
-                  
                 </div>
-                
-                
-           
-            
-            <h3 class="mt-4">extra area</h3>
-            <ul>
-              
-            </ul>
-            <hr class="d-sm-none"></hr>
+                {props.nftCount > 200 && <img src={whale} className={styles.whale} />}
           </div>
     )
 };

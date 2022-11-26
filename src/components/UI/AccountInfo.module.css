@@ -17,3 +17,7 @@
 .list {
     list-style: none;
 }
+
+.whale {
+    max-height: 40px;
+}
