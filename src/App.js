@@ -3,11 +3,13 @@ import NftCard from './components/UI/NftCard'
 import {init,  getAvax, getWavax, getAccount, getNftBalance} from './components/Web3/Web3Client';
 import Navbar from './components/UI/Navbar';
 import Button from './components/UI/Button';
+import Footer from './components/UI/Footer';
 import AccountInfo from './components/UI/AcountInfo';
 import logo from './logo.png';
 import Game from './components/UI/Game';
 import {Cost, getEntries, getEntered, getId, getBal, pickWinner} from './components/Web3/Lotto';
 import {maxSupply} from './components/Web3/CbNft'
+
 
 
 
@@ -22,6 +24,8 @@ function App() {
   const [lottoSize, setLottoSize] = useState(0);
   const [lottoId, setLottoId] = useState(0);
   const [lottoBal, setLottoBal] = useState(0);
+  const [nftDisp, setNftDisp] =  useState(false);
+  const [lottoDisp, setLottoDisp] = useState(false);
 
   const [nftData, setNftData] = useState({
     NFT_NAME:"CryptoBroskis",
@@ -105,7 +109,7 @@ function App() {
 
   
   const balanceGroup = () => {
-    init();
+   
     fetchBalance();
     fetchWavaxBalance();
     fetchNfts();
@@ -125,48 +129,66 @@ function App() {
       tokenAbi: '',
     },
   ]
+
+  let dispNft = () => setNftDisp(true);
+  let hideNft = () => setNftDisp(false);
+  let dispLotto = () => setLottoDisp(true);
+  let hideLotto = () => setLottoDisp(false);
   let picId = nftBalance[0];
-  console.log("entries",lottoBal)
+  console.log("entries",nftDisp)
   
   useEffect(() => {
      init();
   });
 
   return (
-    <body>
+    <div>
       <div class="p-5 bg-primary text-white text-center header">
         <img src={logo}  height={200}></img>
       </div>
+      <Navbar
+        balanceGroup={balanceGroup}
+        dispNft={dispNft}
+        hideNft={hideNft}
+        dispLotto={dispLotto}
+        hideLotto={hideLotto}
+        nftDisp={nftDisp}
+        lottoDisp={lottoDisp}
+        nftBalance={nftBalance.length}
+
+      />
       <div class="container mt-5">
         <div class="row">
-        <AccountInfo 
-          nftCount={nftBalance.length}
-          nftId={picId} 
-          balanceGroup={balanceGroup}
-          wavax={wavaxBalance * .000000000000000001}
-          avax={balance * .000000000000000001}
-          user={userAccount}
-          lottoEntries={lottoEntries}
-         />
+          <AccountInfo 
+            nftCount={nftBalance.length}
+            nftId={picId} 
+            
+            wavax={wavaxBalance * .000000000000000001}
+            avax={balance * .000000000000000001}
+            user={userAccount}
+            lottoEntries={lottoEntries}
+            
+           
+          />
         <div class="col-sm-8">
-        <Game
-          cost={lottoCost * .000000000000000001}
-          size={lottoSize}
-          entered={lottoEntries.length}
-          round={lottoId}
-          pot={lottoBal}
-        > </Game>
-        
+          {lottoDisp === true && 
+          <Game
+            cost={lottoCost * .000000000000000001}
+            size={lottoSize}
+            lottoEntries={lottoEntries}
+            round={lottoId}
+            pot={lottoBal}          
+          > </Game>}
         </div>
-       
         </div>
         
       </div>
-   
-
- 
-    </body>
-
+      
+      {nftDisp === true && 
+      <NftCard
+        nftId={nftBalance}
+      ></NftCard>}
+    </div>
   );
 }
 

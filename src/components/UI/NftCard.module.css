@@ -1,13 +1,18 @@
 
 .main {
     display: flex; 
-    background-color: green;
+    
     flex-direction: column;
    
 }
 .container {
     display: flex;
     flex-wrap: wrap
+
+}
+.nft {
+    background-color: black;
+    height: 65px;
 
 }
 .container div {
@@ -18,18 +23,18 @@
   flex: 1;
 }
 .a {
-    background-color: yellow;
+    
     
 }
 .b {
     
-    background-color: pink;
+    
 }
 
 .c {
-    background-color: blue;
+    
 }
 .d {
-    background-color: aqua;
+    
 
 }

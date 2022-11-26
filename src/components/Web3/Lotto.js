@@ -3,7 +3,7 @@ import Web3 from 'web3';
 let url = window.ethereum;
 const web3 = new Web3(url);
 let lottoAdd = '0x44De21e9Ad936418dFb628d80101b1F681AAA049';
-console.log('web3 in lotto', web3.eth)
+
 
 
 
@@ -1200,6 +1200,7 @@ export const getEntries = async () => {
    return lottoContract.methods.getBalance().call();
  };
 
+<<<<<<< HEAD
  export const pickWinner= async () => {
    let gasLimit = '76000';
    
@@ -1460,4 +1461,7 @@ export const getEntries = async () => {
 
 
 
+=======
+>>>>>>> 6c38141eab5c014d73363d9549a6a47971cb146d
 
+ 

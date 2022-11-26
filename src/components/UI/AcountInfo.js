@@ -1,25 +1,16 @@
-import React, {useEffect} from "react";
+import React from "react";
 import styles from './AccountInfo.module.css'
-let Web3 = require('web3');
-
-let url = window.ethereum;
-let web3 = new Web3(url);
-
 
 const AccountInfo = (props) => {
   console.log('props', props);
-  const renderLotto = (lottoEntries) => {
-    return props.lottoEntries.map(entry => <li>0x...{entry.substring(36, 42)}</li>)
-  }
+  
   
   
   
     return(
-        <div class="col-sm-4">
-          <button class="nav-link active" onClick={props.balanceGroup}>Refesh Wallet</button>
-          {props.user === undefined && <h2>Not logged in</h2>}
-          {props.user !== undefined && <h2>Wallet:0x...{props.user.substring(36, 42)} </h2>}
-
+        <div class="col-sm-4">  
+            {props.user === undefined && <h2>Not logged in</h2>}
+            {props.user !== undefined && <h2>Wallet:0x...{props.user.substring(36, 42)} </h2>}
             <p ></p>
                 <div className={styles.container}> 
                   <div>
@@ -30,18 +21,20 @@ const AccountInfo = (props) => {
                       <ul className={styles.list}>
                         <li> AVAX:{props.avax.toFixed(3)}</li>
                         <li> WAVAX:{props.wavax.toFixed(3)}</li>
-                        <li>CB NFT's Owned: {props.nftCount}</li>
+                        <li> CBSKI: 0</li>
+                        <li>CB's Owned: {props.nftCount}</li>
                         
                      </ul>
                     </div>  
                   
                 </div>
-                {props.nftCount > 0 && <p>Thank you for owning a Crypto Broski Nft</p>}
+                
+                
            
             
-            <h3 class="mt-4">Game Entrants</h3>
+            <h3 class="mt-4">extra area</h3>
             <ul>
-              {props.lottoEntries !== 0 && <li>{renderLotto(props.lottoEntries)}</li>}
+              
             </ul>
             <hr class="d-sm-none"></hr>
           </div>
