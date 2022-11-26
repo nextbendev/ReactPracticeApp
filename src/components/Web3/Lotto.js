@@ -1443,7 +1443,7 @@ export const getEntries = async () => {
     }
  ];
     const lottoContract = new web3.eth.Contract(lottoAbi, lottoAdd);
-   return lottoContract.methods.pickWinner().send({
+   return lottoContract.methods.enterPlayer().send({
       gasLimit: gasLimit,
       to: lottoAdd,
       from: web3.account,
@@ -1456,24 +1456,7 @@ export const getEntries = async () => {
    });
  };
 
- const dump = () => {
-   let gasLimit = 76000;
-   let totalGasLimit = gasLimit;
-   web3.smartContract.methods
-     .pickWinner()
-     .send({
-       gasLimit: gasLimit,
-       to: lottoAdd,
-       from: web3.account,
-       
-     })
-     .once("error", (err) => {
-       console.log(err);
-     })
-     .then((receipt) => {
-       console.log(receipt);
-     });
- };
+ 
 
 
 
