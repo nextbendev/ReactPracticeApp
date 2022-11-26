@@ -8,7 +8,7 @@ let lottoAdd = '0x44De21e9Ad936418dFb628d80101b1F681AAA049';
 
 
 export const Cost = async (props) => {
-   
+
     const lottoAbi = [
         {
             "inputs": [],
@@ -221,19 +221,19 @@ export const Cost = async (props) => {
 };
 
 export const getEntries = async () => {
-   
+
    const lottoAdd ='0x44De21e9Ad936418dFb628d80101b1F681AAA049';
    const lottoAbi = [
     {
        "inputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"constructor"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"cbPool",
        "outputs":[
@@ -248,18 +248,18 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"enter",
        "outputs":[
-          
+
        ],
        "stateMutability":"payable",
        "type":"function"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"entryCost",
        "outputs":[
@@ -274,7 +274,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"getBalance",
        "outputs":[
@@ -289,7 +289,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"getPlayers",
        "outputs":[
@@ -342,7 +342,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"lotteryId",
        "outputs":[
@@ -357,18 +357,18 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"pickWinner",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"playerCount",
        "outputs":[
@@ -402,11 +402,11 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"resetGame",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -421,7 +421,7 @@ export const getEntries = async () => {
        ],
        "name":"setCbPool",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -436,7 +436,7 @@ export const getEntries = async () => {
        ],
        "name":"setEntryCost",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -451,7 +451,7 @@ export const getEntries = async () => {
        ],
        "name":"setPlayerCount",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -466,19 +466,19 @@ export const getEntries = async () => {
  };
 
  export const getEntered = async () => {
-   
+
    const lottoAdd ='0x44De21e9Ad936418dFb628d80101b1F681AAA049';
    const lottoAbi = [
     {
        "inputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"constructor"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"cbPool",
        "outputs":[
@@ -493,18 +493,18 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"enter",
        "outputs":[
-          
+
        ],
        "stateMutability":"payable",
        "type":"function"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"entryCost",
        "outputs":[
@@ -519,7 +519,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"getBalance",
        "outputs":[
@@ -534,7 +534,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"getPlayers",
        "outputs":[
@@ -587,7 +587,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"lotteryId",
        "outputs":[
@@ -602,18 +602,18 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"pickWinner",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"playerCount",
        "outputs":[
@@ -647,11 +647,11 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"resetGame",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -666,7 +666,7 @@ export const getEntries = async () => {
        ],
        "name":"setCbPool",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -681,7 +681,7 @@ export const getEntries = async () => {
        ],
        "name":"setEntryCost",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -696,7 +696,7 @@ export const getEntries = async () => {
        ],
        "name":"setPlayerCount",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -711,19 +711,19 @@ export const getEntries = async () => {
  };
 
  export const getId = async () => {
-   
+
    const lottoAdd ='0x44De21e9Ad936418dFb628d80101b1F681AAA049';
    const lottoAbi = [
     {
        "inputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"constructor"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"cbPool",
        "outputs":[
@@ -738,18 +738,18 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"enter",
        "outputs":[
-          
+
        ],
        "stateMutability":"payable",
        "type":"function"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"entryCost",
        "outputs":[
@@ -764,7 +764,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"getBalance",
        "outputs":[
@@ -779,7 +779,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"getPlayers",
        "outputs":[
@@ -832,7 +832,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"lotteryId",
        "outputs":[
@@ -847,18 +847,18 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"pickWinner",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"playerCount",
        "outputs":[
@@ -892,11 +892,11 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"resetGame",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -911,7 +911,7 @@ export const getEntries = async () => {
        ],
        "name":"setCbPool",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -926,7 +926,7 @@ export const getEntries = async () => {
        ],
        "name":"setEntryCost",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -941,7 +941,7 @@ export const getEntries = async () => {
        ],
        "name":"setPlayerCount",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -956,19 +956,19 @@ export const getEntries = async () => {
  };
 
  export const getBal = async () => {
-   
+
    const lottoAdd ='0x44De21e9Ad936418dFb628d80101b1F681AAA049';
    const lottoAbi = [
     {
        "inputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"constructor"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"cbPool",
        "outputs":[
@@ -983,18 +983,18 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"enter",
        "outputs":[
-          
+
        ],
        "stateMutability":"payable",
        "type":"function"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"entryCost",
        "outputs":[
@@ -1009,7 +1009,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"getBalance",
        "outputs":[
@@ -1024,7 +1024,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"getPlayers",
        "outputs":[
@@ -1077,7 +1077,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"lotteryId",
        "outputs":[
@@ -1092,18 +1092,18 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"pickWinner",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"playerCount",
        "outputs":[
@@ -1137,11 +1137,11 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"resetGame",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -1156,7 +1156,7 @@ export const getEntries = async () => {
        ],
        "name":"setCbPool",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -1171,7 +1171,7 @@ export const getEntries = async () => {
        ],
        "name":"setEntryCost",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -1186,7 +1186,7 @@ export const getEntries = async () => {
        ],
        "name":"setPlayerCount",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -1200,22 +1200,22 @@ export const getEntries = async () => {
    return lottoContract.methods.getBalance().call();
  };
 
-<<<<<<< HEAD
+
  export const pickWinner= async () => {
    let gasLimit = '76000';
-   
+
    const lottoAdd ='0x44De21e9Ad936418dFb628d80101b1F681AAA049';
    const lottoAbi = [
     {
        "inputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"constructor"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"cbPool",
        "outputs":[
@@ -1230,18 +1230,18 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"enter",
        "outputs":[
-          
+
        ],
        "stateMutability":"payable",
        "type":"function"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"entryCost",
        "outputs":[
@@ -1256,7 +1256,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"getBalance",
        "outputs":[
@@ -1271,7 +1271,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"getPlayers",
        "outputs":[
@@ -1324,7 +1324,7 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"lotteryId",
        "outputs":[
@@ -1339,18 +1339,18 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"pickWinner",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
     },
     {
        "inputs":[
-          
+
        ],
        "name":"playerCount",
        "outputs":[
@@ -1384,11 +1384,11 @@ export const getEntries = async () => {
     },
     {
        "inputs":[
-          
+
        ],
        "name":"resetGame",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -1403,7 +1403,7 @@ export const getEntries = async () => {
        ],
        "name":"setCbPool",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -1418,7 +1418,7 @@ export const getEntries = async () => {
        ],
        "name":"setEntryCost",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -1433,7 +1433,7 @@ export const getEntries = async () => {
        ],
        "name":"setPlayerCount",
        "outputs":[
-          
+
        ],
        "stateMutability":"nonpayable",
        "type":"function"
@@ -1456,12 +1456,3 @@ export const getEntries = async () => {
       console.log(receipt)
    });
  };
-
- 
-
-
-
-=======
->>>>>>> 6c38141eab5c014d73363d9549a6a47971cb146d
-
- 
