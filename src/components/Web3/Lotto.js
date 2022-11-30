@@ -1,8 +1,7 @@
 import Web3 from 'web3';
 const url = window.ethereum;
 const web3 = new Web3(url);
-const lottoAdd ="0x44De21e9Ad936418dFb628d80101b1F681AAA049";
-const testLottoAdd = "0x201BAF34Fe925daA34ce647C7A3C801B1AEdB5a5";
+const lottoAdd ="0x68c9DD3c855a7D300c958CF071e40Aba35e7D882";
 const lottoAbi = [
 	{
 		"inputs": [],
@@ -236,21 +235,17 @@ const lottoAbi = [
 	}
 ];
 const lottoContract = new web3.eth.Contract(lottoAbi, lottoAdd);
-const testLottoContract = new web3.eth.Contract(lottoAbi, testLottoAdd);
 let user;
 
 web3.eth.getAccounts(function(err, accounts){
    user = accounts[0];
 })
 
-let wei = 100000000000000000;
+let wei = 200000000000000000;
 let totalGasLimit = 100000;
-let totalCostWei = '100000000000000000';
+let totalCostWei = '200000000000000000';
 
-
-
-
-export const Cost = async (props) => {
+export const Cost = async () => {
    return lottoContract.methods.entryCost().call();
 };
 
@@ -270,23 +265,22 @@ export const getEntries = async () => {
    return lottoContract.methods.getBalance().call();
  };
 
- 
- export const enterLotto = (props) => {
-   console.log( "rpe hash")
+ export const enterLotto = () => {
+   
    lottoContract.methods
       .enter()
       .send({
         from: user,
-        value: '100000000000100000',
+        value: wei,
         gasLimit: '80000',
         
       }, function(error, transactionHash){
-      console.log(transactionHash, "tsxn hash")
+      
   });;
  };
 
- export const pickWinner = (props) => {
-	console.log( "rpe hash")
+ export const pickWinner = () => {
+	
 	lottoContract.methods
 	   .pickWinner()
 	   .send({
@@ -294,7 +288,7 @@ export const getEntries = async () => {
 		 gasLimit: '80000',
 		 
 	   }, function(error, transactionHash){
-	   console.log(transactionHash, "tsxn hash")
+	   
    });;
   };
 

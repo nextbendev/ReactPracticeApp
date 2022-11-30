@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.09355cb8.css",
+    "main.js": "/static/js/main.ff7ad8ce.js",
+    "static/media/bg.png": "/static/media/bg.926d6bd78b381aeb78c4.png",
+    "static/media/lottoHeader.png": "/static/media/lottoHeader.6c49bd049761eb9cf414.png",
+    "static/media/Whale.png": "/static/media/Whale.eebc54cc0d9ab9f0c8e5.png",
+    "static/media/logo.png": "/static/media/logo.169cd7344ff54c5db847.png",
+    "index.html": "/index.html",
+    "main.09355cb8.css.map": "/static/css/main.09355cb8.css.map",
+    "main.ff7ad8ce.js.map": "/static/js/main.ff7ad8ce.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.09355cb8.css",
+    "static/js/main.ff7ad8ce.js"
+  ]
+}

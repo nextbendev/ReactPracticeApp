@@ -145,7 +145,7 @@ function App() {
   let dispLotto = () => setLottoDisp(true);
   let hideLotto = () => setLottoDisp(false);
   let picId = nftBalance[0];
-  console.log("entries",nftDisp)
+  
 
   useEffect(() => {
      init();

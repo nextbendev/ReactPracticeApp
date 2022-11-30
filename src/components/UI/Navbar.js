@@ -3,7 +3,7 @@ import styles from './Navbar.module.css'
 
 const Navbar = (props) => {
 
-    console.log(props.nftBalance, "props nfgt abal")
+
     return(
         <div className={styles.topnav}>
             {props.nftBalance > 0 

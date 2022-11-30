@@ -7,7 +7,7 @@ const Game = (props) => {
     let futureEntry = ( playerLeft * props.cost);
     let potInt = parseInt(props.pot) * .000000000000000001;
     let totalPot = (potInt + futureEntry);
-    console.log(props.lottoEntries, 'prosp entries')
+    
     
     return(         
         <div>

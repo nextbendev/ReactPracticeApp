@@ -29,7 +29,6 @@ export const init = async () => {
    
 export const getNftBalance = async (props) => {
     if (!isInitialized) {
-      console.log('too much init');
         await init();
     }
     const cb_abi = 
@@ -759,7 +758,7 @@ export const getNftBalance = async (props) => {
 
 export const getWavax = async () => {
    if (!isInitialized) {
-      console.log('too much init');
+      
       await init();
   }
   const avaxAdd ='0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7';

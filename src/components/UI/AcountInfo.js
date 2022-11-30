@@ -4,7 +4,7 @@ import whale from '../../Whale.png'
 import { style } from "@mui/system";
 
 const AccountInfo = (props) => {
-  console.log('props', props);
+  
   
   
   
